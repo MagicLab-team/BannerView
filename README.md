@@ -78,7 +78,7 @@ BannerViewDelegate allows you to be notifed when banner scrolls to next item or 
 }
 ```
 
-## There are thre possible scroll types
+## There are three possible scroll types
 
 ```swift
 public enum BannerViewScrollType {
