@@ -98,7 +98,7 @@ You may access bannerPageControl through public property
 
 ```swift
 bannerView.pageControl.color = UIColor.black
-bannerView.pageControl.currentPageColor = UIColor.customGreenColor()
+bannerView.pageControl.currentPageColor = UIColor.green
 ```
 
 ## License
