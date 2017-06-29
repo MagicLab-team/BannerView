@@ -90,7 +90,7 @@ public enum BannerViewScrollType {
 
 |             .fromStart          |           .reverse                        |      .alwaysForward                       |
 |---------------------------------|-------------------------------------------|-------------------------------------------|
-|![Demo]()|![Demo]()|![Demo]()|
+|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_fromStart.gif)|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_reverse.gif)|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_alwaysForward.gif)|
 
 ## BannerPageControl
 
