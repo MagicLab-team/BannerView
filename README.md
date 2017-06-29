@@ -92,6 +92,15 @@ public enum BannerViewScrollType {
 |---------------------------------|-------------------------------------------|-------------------------------------------|
 |![Demo]()|![Demo]()|![Demo]()|
 
+## BannerPageControl
+
+You may access bannerPageControl through public property
+
+```swift
+bannerView.pageControl.color = UIColor.black
+bannerView.pageControl.currentPageColor = UIColor.customGreenColor()
+```
+
 ## License
 
 Reusable is released under the MIT license. See [LICENSE](https://github.com/MagicLab-team/BannerView/blob/master/LICENSE) for details.
