@@ -18,7 +18,7 @@ s.ios.deployment_target = "8.0"
 
 s.source       = { :git => "https://github.com/MagicLab-team/BannerView.git", :tag => "1.0.0" }
 
-s.source_files  = "ParallaxHeader/**/*.{h,m}"
+s.source_files  = "BannerView/**/*.{h,m}"
 
 s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
 
