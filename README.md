@@ -1,5 +1,5 @@
 # BannerView
-Simple Banner View that scrolls automatically.
+Simple Banner View that automatically scrolls.
 
 |             English localization     |           Arabic localization        |
 |--------------------------------------|--------------------------------------|
