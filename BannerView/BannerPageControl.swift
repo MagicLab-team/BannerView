@@ -27,7 +27,13 @@ public class BannerPageControl: UIView {
     public var currentPage: Int = 0 {
         didSet {
             UIView.animate(withDuration: 0.2) {
-                let x = CGFloat(self.currentPage) * self.frame.width / CGFloat(self.total)
+                let x: CGFloat = {
+                    if UIApplication.isRTL {
+                        return CGFloat(self.total - 1 - self.currentPage) * self.frame.width / CGFloat(self.total)
+                    } else {
+                        return CGFloat(self.currentPage) * self.frame.width / CGFloat(self.total)
+                    }
+                }()
                 let width = self.frame.width / CGFloat(self.total)
                 self.currentPageView.frame = CGRect(
                     x: x,
