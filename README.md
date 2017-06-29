@@ -3,7 +3,7 @@ Simple Banner View that automatically scrolls.
 
 |             English localization     |           Arabic localization        |
 |--------------------------------------|--------------------------------------|
-|![Demo]()|![Demo]()|
+|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_en.gif)|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_ar.gif)|
 
 ## Contents
 - [Requirements](#requirements)
