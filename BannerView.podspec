@@ -20,4 +20,6 @@ s.source       = { :git => "https://github.com/MagicLab-team/BannerView.git", :t
 
 s.source_files  = "ParallaxHeader/**/*.{h,m}"
 
+s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+
 end
