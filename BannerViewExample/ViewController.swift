@@ -23,8 +23,8 @@ class ViewController: UIViewController, BannerViewDelegate {
         
         let items: [BannerItem] = [
             BannerItem(image: "banner_1".localizedImage),
-            BannerItem(image: "banner_2".localizedImage)
-//            BannerItem(image: "banner_3".localizedImage)
+            BannerItem(image: "banner_2".localizedImage),
+            BannerItem(image: "banner_3".localizedImage)
         ]
         
         topBannerView.setup(
@@ -33,18 +33,26 @@ class ViewController: UIViewController, BannerViewDelegate {
             bannerItems: items,
             delegate: self
         )
+        topBannerView.pageControl.color = UIColor.black
+        topBannerView.pageControl.currentPageColor = UIColor.customGreenColor()
+        
         centerBannerView.setup(
             type: BannerViewScrollType.reverse,
             timeForOneItem: 1,
             bannerItems: items,
             delegate: self
         )
+        centerBannerView.pageControl.color = UIColor.black
+        centerBannerView.pageControl.currentPageColor = UIColor.customGreenColor()
+        
         bottomBannerView.setup(
             type: BannerViewScrollType.alwaysForward,
             timeForOneItem: 1,
             bannerItems: items,
             delegate: self
         )
+        bottomBannerView.pageControl.color = UIColor.black
+        bottomBannerView.pageControl.currentPageColor = UIColor.customGreenColor()
     }
     
     override func didReceiveMemoryWarning() {

@@ -103,11 +103,13 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
                     return
             }
             let indexPath = strongSelf.indexPathToScroll(totalPages: total)
-            strongSelf.collectionView?.scrollToItem(
-                at: indexPath,
-                at: .centeredHorizontally,
-                animated: true
-            )
+            if indexPath.item >= 0 && indexPath.item < total {
+                strongSelf.collectionView?.scrollToItem(
+                    at: indexPath,
+                    at: .centeredHorizontally,
+                    animated: true
+                )
+            }
             
             strongSelf.timerScrollCollection()
         }
@@ -130,11 +132,11 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
                     return IndexPath(item: currentPage - 1, section: 0)
                 }
             } else {
-                if currentPage - 1 <= 0 {
+                if currentPage - 1 >= 0 {
+                    return IndexPath(item: currentPage - 1, section: 0)
+                } else {
                     movingForward = true
                     return IndexPath(item: currentPage + 1, section: 0)
-                } else {
-                    return IndexPath(item: currentPage - 1, section: 0)
                 }
             }
         case .alwaysForward:

@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    func addConstraintsAlignedToSuperview() {
+    func addConstraintsAlignedToSuperview(top: CGFloat = 0, leading: CGFloat = 0, bottom: CGFloat = 0, trailing: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         
         superview?.addConstraint(
@@ -22,18 +22,7 @@ extension UIView {
                 toItem: superview,
                 attribute: NSLayoutAttribute.top,
                 multiplier: 1,
-                constant: 0
-            )
-        )
-        superview?.addConstraint(
-            NSLayoutConstraint(
-                item: self,
-                attribute: .bottom,
-                relatedBy: .equal,
-                toItem: superview,
-                attribute: .bottom,
-                multiplier: 1,
-                constant: 0
+                constant: top
             )
         )
         superview?.addConstraint(
@@ -44,7 +33,18 @@ extension UIView {
                 toItem: superview,
                 attribute: .leading,
                 multiplier: 1,
-                constant: 0
+                constant: leading
+            )
+        )
+        superview?.addConstraint(
+            NSLayoutConstraint(
+                item: self,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: superview,
+                attribute: .bottom,
+                multiplier: 1,
+                constant: bottom
             )
         )
         superview?.addConstraint(
@@ -55,7 +55,7 @@ extension UIView {
                 toItem: superview,
                 attribute: .trailing,
                 multiplier: 1,
-                constant: 0
+                constant: trailing
             )
         )
     }
