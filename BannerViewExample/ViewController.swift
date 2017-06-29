@@ -23,8 +23,8 @@ class ViewController: UIViewController, BannerViewDelegate {
         
         let items: [BannerItem] = [
             BannerItem(image: "banner_1".localizedImage),
-            BannerItem(image: "banner_2".localizedImage),
-            BannerItem(image: "banner_3".localizedImage)
+            BannerItem(image: "banner_2".localizedImage)
+//            BannerItem(image: "banner_3".localizedImage)
         ]
         
         topBannerView.setup(

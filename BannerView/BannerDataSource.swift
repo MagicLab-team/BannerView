@@ -130,10 +130,12 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
                     return IndexPath(item: currentPage - 1, section: 0)
                 }
             } else {
-                if currentPage - 1 == 0 {
+                if currentPage - 1 <= 0 {
                     movingForward = true
+                    return IndexPath(item: currentPage + 1, section: 0)
+                } else {
+                    return IndexPath(item: currentPage - 1, section: 0)
                 }
-                return IndexPath(item: currentPage - 1, section: 0)
             }
         case .alwaysForward:
             return IndexPath(item: currentPage + 1, section: 0)
