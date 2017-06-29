@@ -1,5 +1,5 @@
 # BannerView
-Simple Banner View that scrolls automatically.
+Simple Banner View that automatically scrolls.
 
 |             English localization     |           Arabic localization        |
 |--------------------------------------|--------------------------------------|
@@ -91,6 +91,15 @@ public enum BannerViewScrollType {
 |             .fromStart          |           .reverse                        |      .alwaysForward                       |
 |---------------------------------|-------------------------------------------|-------------------------------------------|
 |![Demo]()|![Demo]()|![Demo]()|
+
+## BannerPageControl
+
+You may access bannerPageControl through public property
+
+```swift
+bannerView.pageControl.color = UIColor.black
+bannerView.pageControl.currentPageColor = UIColor.green
+```
 
 ## License
 
