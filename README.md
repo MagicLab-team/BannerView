@@ -1,2 +1,2 @@
 # BannerView
-Simple Banner View that scrolls always in one direction
+Simple Banner View that scrolls automatically.
