@@ -37,7 +37,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'BannerView', :git => 'https://github.com/MagicLab-team/BannerView.git', :tag => '1.0.0'
+    pod 'MLBannerView'
 end
 ```
 
