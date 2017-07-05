@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "MLBannerView"
-s.version      = "1.0.2"
+s.version      = "1.0.3"
 s.summary      = "BannerView with ability to show items periodically."
 s.description  = "BannerView allows easily to setup banner with images to show."
 s.homepage     = "https://github.com/MagicLab-team"
