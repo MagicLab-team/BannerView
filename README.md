@@ -29,11 +29,11 @@ $ gem install cocoapods
 
 > CocoaPods 1.1.0+ is required to build Reusable 1.0.0+.
 
-To integrate Reusable into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate BannerView into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
@@ -90,7 +90,7 @@ public enum BannerViewScrollType {
 
 |             .fromStart          |           .reverse                        |      .alwaysForward                       |
 |---------------------------------|-------------------------------------------|-------------------------------------------|
-|![Demo]()|![Demo]()|![Demo]()|
+|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_fromStart.gif)|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_reverse.gif)|![Demo](https://github.com/MagicLab-team/BannerView/blob/master/BannerViewExample/Demo_alwaysForward.gif)|
 
 ## BannerPageControl
 
@@ -100,6 +100,9 @@ You may access bannerPageControl through public property
 bannerView.pageControl.color = UIColor.black
 bannerView.pageControl.currentPageColor = UIColor.green
 ```
+
+## See more about localization
+[Localizable](https://github.com/romansorochak/Localizable)
 
 ## License
 
