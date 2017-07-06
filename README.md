@@ -9,6 +9,7 @@ Simple Banner View that automatically scrolls.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [TODO](#todo)
 - [License](#license)
 
 ## Requirements
@@ -37,7 +38,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'BannerView', :git => 'https://github.com/MagicLab-team/BannerView.git', :tag => '1.0.0'
+    pod 'MLBannerView'
 end
 ```
 
@@ -103,6 +104,11 @@ bannerView.pageControl.currentPageColor = UIColor.green
 
 ## See more about localization
 [Localizable](https://github.com/romansorochak/Localizable)
+
+## TODO
+
+- Shifting of authomatically scrolling when user interacts
+- Ability to set cell (ability to set image asynchronous)
 
 ## License
 
