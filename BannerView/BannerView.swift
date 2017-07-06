@@ -9,20 +9,44 @@
 import UIKit
 
 
+/**
+ BannerViewDelegate.
+ */
 @objc public protocol BannerViewDelegate {
     
+    /**
+     Notifies when banner view scrolls to the next item.
+     */
     @objc optional func bannerView(bannerView: BannerView, didScrollTo: BannerItem, with index: Int)
     
+    /**
+     Notifies when user selects item.
+     */
     @objc optional func bannerView(bannerView: BannerView, didSelectItem: BannerItem, with index: Int)
 }
 
+/**
+ BannerViewScrollType contains different scroll types.
+ */
 public enum BannerViewScrollType {
+    /**
+     BannerView scrolls to the start after the last item.
+     */
     case fromStart
+    /**
+     BannerView scrolls to the end item and then to the first item through all items.
+     */
     case reverse
+    /**
+     BannerView always scrolls forward.
+     */
     case alwaysForward
 }
 
 
+/**
+ * BannerView - contains all public API.
+ */
 @IBDesignable
 public class BannerView: UIView {
     
@@ -30,6 +54,10 @@ public class BannerView: UIView {
     
     private var collectionView: BannerCollectionView!
     private var dataSource: BannerDataSource!
+    
+    /**
+     pageControl property allows to setup BannerPageControl.
+     */
     private (set) public var pageControl: BannerPageControl!
     
     
@@ -46,6 +74,7 @@ public class BannerView: UIView {
         
         commonInit()
     }
+    
     
     private func commonInit() {
         let layout = UICollectionViewFlowLayout()
@@ -120,7 +149,13 @@ public class BannerView: UIView {
     
     
     /**
-     * Setup
+     Setup banner view.
+     
+     @param type - scroll type.
+     @param timeForOneItem - indicates how much time user can see one item.
+     @param bannerItems - items to show.
+     @param automaticallyScrolls - indicates whether banner view will scroll items automatically. By default is true.
+     @param delegate - delegate.
      */
     public func setup(
         type: BannerViewScrollType,
@@ -160,10 +195,16 @@ public class BannerView: UIView {
         }
     }
     
+    /**
+     Starts scrolling automatically.
+     */
     public func startAutomaticScrolling() {
         dataSource.startSlider()
     }
     
+    /**
+     Stops scrolling automatically.
+     */
     public func stopAutomaticScrolling() {
         dataSource.stopSlider()
     }
