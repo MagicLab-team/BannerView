@@ -9,13 +9,9 @@
 import UIKit
 
 
-class BannerCollectionView: UICollectionView {
+public class BannerCollectionView: UICollectionView {
     
-    var isTouching: Bool = false {
-        didSet {
-            
-        }
-    }
+    var isTouching: Bool = false
     
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -26,7 +22,7 @@ class BannerCollectionView: UICollectionView {
         print("touchesBegan: \(isTouching)")
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         
         isTouching = true
@@ -34,7 +30,7 @@ class BannerCollectionView: UICollectionView {
         print("touchesMoved: \(isTouching)")
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         
         isTouching = false
@@ -42,7 +38,7 @@ class BannerCollectionView: UICollectionView {
         print("touchesEnded: \(isTouching)")
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
         
         isTouching = false

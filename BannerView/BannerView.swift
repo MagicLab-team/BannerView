@@ -23,6 +23,11 @@ import UIKit
      Notifies when user selects item.
      */
     @objc optional func bannerView(bannerView: BannerView, didSelectItem: BannerItem, with index: Int)
+    
+    /**
+     Returns cell for collection view.
+     */
+    @objc optional func bannerView(bannerView: BannerView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell?
 }
 
 /**
@@ -52,13 +57,25 @@ public class BannerView: UIView {
     
     @IBInspectable public var delegate: BannerViewDelegate?
     
-    private var collectionView: BannerCollectionView!
-    private var dataSource: BannerDataSource!
+    private var bannerDataSource: BannerDataSource!
+    /**
+     Collection view of BannerView.
+     */
+    private (set) public var collectionView: BannerCollectionView!
     
     /**
      pageControl property allows to setup BannerPageControl.
      */
     private (set) public var pageControl: BannerPageControl!
+    
+    /**
+     Current page.
+     */
+    public var currentPage: Int {
+        get {
+            return bannerDataSource.currentPage
+        }
+    }
     
     
     //MARK: initializers
@@ -162,31 +179,20 @@ public class BannerView: UIView {
         timeForOneItem: TimeInterval,
         bannerItems: [BannerItem],
         automaticallyScrolls: Bool = true,
-        delegate: BannerViewDelegate) {
-        self.delegate = delegate
+        delegate: BannerViewDelegate?) {
         
-        dataSource = BannerDataSource(
+        bannerDataSource = BannerDataSource(
+            bannerView: self,
             bannerViewScrollType: type,
             timeForOneItem: timeForOneItem,
             bannerItems: bannerItems,
-            didScrollHandler: { (bannerItem, index) in
-                self.pageControl.currentPage = index
-                
-                self.delegate?.bannerView?(
-                    bannerView: self,
-                    didScrollTo: bannerItem,
-                    with: index
-                )
-        },
-            clickHandler: { (bannerItem, index) in
-                self.delegate?.bannerView?(
-                    bannerView: self,
-                    didSelectItem: bannerItem,
-                    with: index
-                )
-        })
-        collectionView.dataSource = dataSource
-        collectionView.delegate = dataSource
+            delegate: self
+        )
+        self.delegate = delegate
+        collectionView.dataSource = bannerDataSource
+        collectionView.delegate = bannerDataSource
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView.contentOffset = CGPoint(x: 0, y: 0)
         
         pageControl.setup(total: bannerItems.count, currentPage: 0)
         
@@ -199,13 +205,48 @@ public class BannerView: UIView {
      Starts scrolling automatically.
      */
     public func startAutomaticScrolling() {
-        dataSource.startSlider()
+        bannerDataSource.startSlider()
     }
     
     /**
      Stops scrolling automatically.
      */
     public func stopAutomaticScrolling() {
-        dataSource.stopSlider()
+        bannerDataSource.stopSlider()
+    }
+}
+
+extension BannerView: BannerViewDelegate {
+    
+    public func bannerView(bannerView: BannerView,
+                           didScrollTo: BannerItem,
+                           with index: Int) {
+        self.pageControl.currentPage = index
+        
+        delegate?.bannerView?(
+            bannerView: bannerView,
+            didScrollTo: didScrollTo,
+            with: index
+        )
+    }
+    
+    public func bannerView(bannerView: BannerView,
+                           didSelectItem: BannerItem,
+                           with index: Int) {
+        self.delegate?.bannerView?(
+            bannerView: self,
+            didSelectItem: didSelectItem,
+            with: index
+        )
+    }
+    
+    public func bannerView(bannerView: BannerView,
+                           collectionView: UICollectionView,
+                           cellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
+        return delegate?.bannerView?(
+            bannerView: self,
+            collectionView: collectionView,
+            cellForItemAt: indexPath
+        )
     }
 }

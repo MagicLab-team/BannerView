@@ -11,10 +11,12 @@ import BannerView
 
 
 class ViewController: UIViewController, BannerViewDelegate {
+
     
     @IBOutlet weak var topBannerView: BannerView!
     @IBOutlet weak var centerBannerView: BannerView!
     @IBOutlet weak var bottomBannerView: BannerView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,7 @@ class ViewController: UIViewController, BannerViewDelegate {
         
         centerBannerView.setup(
             type: BannerViewScrollType.reverse,
-            timeForOneItem: 1,
+            timeForOneItem: 2,
             bannerItems: items,
             delegate: self
         )
@@ -47,9 +49,9 @@ class ViewController: UIViewController, BannerViewDelegate {
         
         bottomBannerView.setup(
             type: BannerViewScrollType.alwaysForward,
-            timeForOneItem: 1,
+            timeForOneItem: 2,
             bannerItems: items,
-            delegate: self
+            delegate: nil
         )
         bottomBannerView.pageControl.color = UIColor.black
         bottomBannerView.pageControl.currentPageColor = UIColor.customGreenColor()
@@ -58,14 +60,6 @@ class ViewController: UIViewController, BannerViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-    }
-    
-    func bannerView(bannerView: BannerView, didScrollTo: BannerItem, with index: Int) {
-//        print("didScrollTo: \(index)")
-    }
-    
-    func bannerView(bannerView: BannerView, didSelectItem: BannerItem, with index: Int) {
-//        print("didSelectItem: \(index)")
     }
 }
 

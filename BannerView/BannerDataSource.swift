@@ -11,26 +11,41 @@ import UIKit
 
 typealias BannerItemHandler = (BannerItem, Int)->Void
 
-private let cellIdentifier = "BannerCollectionCell"
+
+private let cellIdentifier = "BannerView.BannerCollectionCell"
+
 
 class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    private (set) weak var bannerView: BannerView!
     private (set) var bannerItems: [BannerItem]?
+    private var totalItems: Int {
+        if let bannerItems = self.bannerItems {
+            return bannerItems.count
+        }
+        return 0
+    }
     private (set) var currentPage: Int = 0 {
         didSet {
             if let bannerItem = bannerItems?.safelyGet(currentPage) {
                 if bannerViewScrollType == .alwaysForward,
-                    let total = bannerItems?.count,
-                    currentPage + 1 == total {
-                    didScrollHandler?(bannerItem, 0)
+                    currentPage + 1 == totalItems {
+                    delegate?.bannerView?(
+                        bannerView: bannerView,
+                        didScrollTo: bannerItem,
+                        with: 0
+                    )
                 } else {
-                    didScrollHandler?(bannerItem, currentPage)
+                    delegate?.bannerView?(
+                        bannerView: bannerView,
+                        didScrollTo: bannerItem,
+                        with: currentPage
+                    )
                 }
             }
             
             if bannerViewScrollType == .alwaysForward,
-                let total = bannerItems?.count,
-                currentPage + 1 == total {
+                currentPage + 1 == totalItems {
                 
                 collectionView?.scrollToItem(
                     at: IndexPath(item: 0, section: 0),
@@ -57,18 +72,19 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
     
     private var bannerViewScrollType: BannerViewScrollType = .fromStart
     private var timeForOneItem: TimeInterval = 3
-    private var didScrollHandler: BannerItemHandler?
-    private var clickHandler: BannerItemHandler?
+    
+    var delegate: BannerViewDelegate?
     
     
-    init(bannerViewScrollType: BannerViewScrollType,
+    init(bannerView: BannerView,
+         bannerViewScrollType: BannerViewScrollType,
          timeForOneItem: TimeInterval,
          bannerItems: [BannerItem],
-         didScrollHandler: @escaping BannerItemHandler,
-         clickHandler: @escaping BannerItemHandler) {
+         delegate: BannerViewDelegate) {
         
         super.init()
         
+        self.bannerView = bannerView
         self.bannerViewScrollType = bannerViewScrollType
         self.timeForOneItem = timeForOneItem
         self.bannerItems = bannerItems
@@ -76,8 +92,7 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
             let bannerItem = bannerItems.safelyGet(0) {
             self.bannerItems?.append(bannerItem)
         }
-        self.didScrollHandler = didScrollHandler
-        self.clickHandler = clickHandler
+        self.delegate = delegate
         
         if UIApplication.isRTL {
             currentPage = (self.bannerItems?.count ?? 0) - 1
@@ -112,13 +127,14 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
             return
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + after) { [weak self] in
-            guard let strongSelf = self,
-                let total = strongSelf.bannerItems?.count else {
-                    return
+            guard let strongSelf = self else {
+                return
             }
             if strongSelf.canAutomaticallyScroll {
-                let indexPath = strongSelf.indexPathToScroll(totalPages: total)
-                if indexPath.item >= 0 && indexPath.item < total {
+                let indexPath = strongSelf.indexPathToScroll(
+                    totalPages: strongSelf.totalItems
+                )
+                if indexPath.item >= 0 && indexPath.item < strongSelf.totalItems {
                     strongSelf.collectionView?.scrollToItem(
                         at: indexPath,
                         at: .centeredHorizontally,
@@ -169,7 +185,7 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
         
         self.collectionView = collectionView
         
-        return collectionView.frame.size
+        return collectionView.bounds.size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -180,10 +196,27 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
     //MARK: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bannerItems?.count ?? 0
+        return totalItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let indexPathForDelegate: IndexPath = {
+            if bannerViewScrollType == .alwaysForward,
+                indexPath.item == totalItems - 1 {
+                return IndexPath(item: 0, section: 0)
+            } else {
+                return indexPath
+            }
+        }()
+        
+        if let cell = delegate?.bannerView?(
+            bannerView: bannerView,
+            collectionView: collectionView,
+            cellForItemAt: indexPathForDelegate
+            ) {
+            return cell
+        }
+        
         let cell: BannerCollectionCell = {
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: cellIdentifier,
@@ -202,7 +235,12 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let bannerItem = bannerItems?[indexPath.item] {
-            clickHandler?(bannerItem, indexPath.item)
+            //            clickHandler?(bannerItem, indexPath.item)
+            delegate?.bannerView?(
+                bannerView: bannerView,
+                didSelectItem: bannerItem,
+                with: indexPath.item
+            )
         }
     }
     
@@ -212,11 +250,8 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageFloat = scrollView.contentOffset.x / scrollView.frame.width
         if UIApplication.isRTL {
-            guard let total = bannerItems?.count else {
-                return
-            }
             let page = Int(ceil(pageFloat))
-            currentPage = (page - (total-1)) * -1
+            currentPage = (page - (totalItems-1)) * -1
         } else {
             let page = Int(pageFloat)
             currentPage = page
