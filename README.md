@@ -9,7 +9,6 @@ Simple Banner View that automatically scrolls.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [TODO](#todo)
 - [License](#license)
 
 ## Requirements
@@ -104,11 +103,6 @@ bannerView.pageControl.currentPageColor = UIColor.green
 
 ## See more about localization
 [Localizable](https://github.com/romansorochak/Localizable)
-
-## TODO
-
-- Shifting of authomatically scrolling when user interacts
-- Ability to set cell (ability to set image asynchronous)
 
 ## License
 
