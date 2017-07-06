@@ -28,7 +28,7 @@ public class BannerView: UIView {
     
     @IBInspectable public var delegate: BannerViewDelegate?
     
-    private var collectionView: UICollectionView!
+    private var collectionView: BannerCollectionView!
     private var dataSource: BannerDataSource!
     private (set) public var pageControl: BannerPageControl!
     
@@ -50,7 +50,7 @@ public class BannerView: UIView {
     private func commonInit() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        collectionView = UICollectionView(
+        collectionView = BannerCollectionView(
             frame: bounds,
             collectionViewLayout: layout
         )

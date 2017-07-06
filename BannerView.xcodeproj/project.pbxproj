@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B50C5E3A1F05665D00908490 /* BannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B50C5E381F05665D00908490 /* BannerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B53A73591F0E56F500D458B4 /* BannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A73581F0E56F500D458B4 /* BannerCollectionView.swift */; };
 		B542E9B91F05994800627A79 /* banner_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B542E9BB1F05994800627A79 /* banner_1.jpg */; };
 		B542E9BD1F05995400627A79 /* banner_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B542E9BF1F05995400627A79 /* banner_2.jpg */; };
 		B542E9C11F05995B00627A79 /* banner_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B542E9C31F05995B00627A79 /* banner_3.png */; };
@@ -64,6 +65,7 @@
 		B50C5E351F05665D00908490 /* BannerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50C5E381F05665D00908490 /* BannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
 		B50C5E391F05665D00908490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53A73581F0E56F500D458B4 /* BannerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCollectionView.swift; sourceTree = "<group>"; };
 		B542E9BA1F05994800627A79 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = en; path = en.lproj/banner_1.jpg; sourceTree = "<group>"; };
 		B542E9BC1F05994B00627A79 /* ar */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ar; path = ar.lproj/banner_1.jpg; sourceTree = "<group>"; };
 		B542E9BE1F05995400627A79 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = en; path = en.lproj/banner_2.jpg; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				B5807A771F05678A002112D5 /* BannerView.swift */,
 				B5807A791F056861002112D5 /* BannerDataSource.swift */,
 				B5807A7B1F0569D8002112D5 /* BannerItem.swift */,
+				B53A73581F0E56F500D458B4 /* BannerCollectionView.swift */,
 				B5807A821F056EB1002112D5 /* BannerCollectionCell.swift */,
 				B542E9CE1F05B1F300627A79 /* BannerPageControl.swift */,
 				B50C5E381F05665D00908490 /* BannerView.h */,
@@ -361,6 +364,7 @@
 			files = (
 				B5807A7A1F056861002112D5 /* BannerDataSource.swift in Sources */,
 				B5807A7C1F0569D8002112D5 /* BannerItem.swift in Sources */,
+				B53A73591F0E56F500D458B4 /* BannerCollectionView.swift in Sources */,
 				B5807A8A1F0575D9002112D5 /* UIView+Constraints.swift in Sources */,
 				B5807A781F05678A002112D5 /* BannerView.swift in Sources */,
 				B5807A811F056E25002112D5 /* UIApplication+RtL.swift in Sources */,
