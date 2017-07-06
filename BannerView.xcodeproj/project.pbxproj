@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DAC2147441EA79D09BD18A4 /* Pods_BannerViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90972948360F7EB13B00A4AF /* Pods_BannerViewExample.framework */; };
+		72001F9BE52424BB241AF4D0 /* Pods_BannerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9414ED6A96AAA0EAC289D0 /* Pods_BannerView.framework */; };
 		B50C5E3A1F05665D00908490 /* BannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B50C5E381F05665D00908490 /* BannerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B53A73591F0E56F500D458B4 /* BannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A73581F0E56F500D458B4 /* BannerCollectionView.swift */; };
+		B53A735B1F0E88E800D458B4 /* CustomBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A735A1F0E88E800D458B4 /* CustomBannerViewController.swift */; };
+		B53A735F1F0E8C6D00D458B4 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A735E1F0E8C6D00D458B4 /* Cell.swift */; };
 		B542E9B91F05994800627A79 /* banner_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B542E9BB1F05994800627A79 /* banner_1.jpg */; };
 		B542E9BD1F05995400627A79 /* banner_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B542E9BF1F05995400627A79 /* banner_2.jpg */; };
 		B542E9C11F05995B00627A79 /* banner_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B542E9C31F05995B00627A79 /* banner_3.png */; };
@@ -34,6 +39,7 @@
 		B5807A851F05715F002112D5 /* BannerView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B50C5E351F05665D00908490 /* BannerView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5807A8A1F0575D9002112D5 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5807A891F0575D9002112D5 /* UIView+Constraints.swift */; };
 		B5807A8D1F058D74002112D5 /* Array+Safety.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5807A8C1F058D74002112D5 /* Array+Safety.swift */; };
+		B5F789091F0E94F600626304 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F789081F0E94F600626304 /* Cell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +67,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		65BA36269FEB255F68ED517F /* Pods-BannerViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BannerViewExample/Pods-BannerViewExample.debug.xcconfig"; sourceTree = "<group>"; };
+		7558056BDE9B62A3F89D9564 /* Pods-BannerViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-BannerViewExample/Pods-BannerViewExample.release.xcconfig"; sourceTree = "<group>"; };
+		90972948360F7EB13B00A4AF /* Pods_BannerViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BannerViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7CDD77A5B49ECC3396A1752 /* Pods-BannerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BannerView/Pods-BannerView.debug.xcconfig"; sourceTree = "<group>"; };
 		B50C5E351F05665D00908490 /* BannerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50C5E381F05665D00908490 /* BannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
 		B50C5E391F05665D00908490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53A73581F0E56F500D458B4 /* BannerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCollectionView.swift; sourceTree = "<group>"; };
+		B53A735A1F0E88E800D458B4 /* CustomBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBannerViewController.swift; sourceTree = "<group>"; };
+		B53A735E1F0E8C6D00D458B4 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		B542E9BA1F05994800627A79 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = en; path = en.lproj/banner_1.jpg; sourceTree = "<group>"; };
 		B542E9BC1F05994B00627A79 /* ar */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ar; path = ar.lproj/banner_1.jpg; sourceTree = "<group>"; };
 		B542E9BE1F05995400627A79 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = en; path = en.lproj/banner_2.jpg; sourceTree = "<group>"; };
@@ -95,6 +108,9 @@
 		B5807A891F0575D9002112D5 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		B5807A8B1F058A20002112D5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		B5807A8C1F058D74002112D5 /* Array+Safety.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Safety.swift"; sourceTree = "<group>"; };
+		B5F789081F0E94F600626304 /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		FB2AE12E0A600FA3699870AE /* Pods-BannerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerView.release.xcconfig"; path = "Pods/Target Support Files/Pods-BannerView/Pods-BannerView.release.xcconfig"; sourceTree = "<group>"; };
+		FE9414ED6A96AAA0EAC289D0 /* Pods_BannerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BannerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72001F9BE52424BB241AF4D0 /* Pods_BannerView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,18 +127,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5807A841F05715F002112D5 /* BannerView.framework in Frameworks */,
+				5DAC2147441EA79D09BD18A4 /* Pods_BannerViewExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66931EB8A63315E4FC1A3138 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7CDD77A5B49ECC3396A1752 /* Pods-BannerView.debug.xcconfig */,
+				FB2AE12E0A600FA3699870AE /* Pods-BannerView.release.xcconfig */,
+				65BA36269FEB255F68ED517F /* Pods-BannerViewExample.debug.xcconfig */,
+				7558056BDE9B62A3F89D9564 /* Pods-BannerViewExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B50C5E2B1F05665D00908490 = {
 			isa = PBXGroup;
 			children = (
 				B50C5E371F05665D00908490 /* BannerView */,
 				B5807A631F0566EC002112D5 /* BannerViewExample */,
 				B50C5E361F05665D00908490 /* Products */,
+				66931EB8A63315E4FC1A3138 /* Pods */,
+				C6E33D18A78D4F9F091A3C20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,12 +172,40 @@
 				B5807A771F05678A002112D5 /* BannerView.swift */,
 				B5807A791F056861002112D5 /* BannerDataSource.swift */,
 				B5807A7B1F0569D8002112D5 /* BannerItem.swift */,
+				B53A73581F0E56F500D458B4 /* BannerCollectionView.swift */,
 				B5807A821F056EB1002112D5 /* BannerCollectionCell.swift */,
 				B542E9CE1F05B1F300627A79 /* BannerPageControl.swift */,
 				B50C5E381F05665D00908490 /* BannerView.h */,
 				B50C5E391F05665D00908490 /* Info.plist */,
 			);
 			path = BannerView;
+			sourceTree = "<group>";
+		};
+		B53A735C1F0E8C4D00D458B4 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B5807A661F0566EC002112D5 /* ViewController.swift */,
+				B53A735D1F0E8C5B00D458B4 /* Custom */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		B53A735D1F0E8C5B00D458B4 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				B53A73601F0E8C8500D458B4 /* Cell */,
+				B53A735A1F0E88E800D458B4 /* CustomBannerViewController.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		B53A73601F0E8C8500D458B4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B53A735E1F0E8C6D00D458B4 /* Cell.swift */,
+				B5F789081F0E94F600626304 /* Cell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		B542E9B21F05991900627A79 /* LocalizedImages */ = {
@@ -183,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				B5807A641F0566EC002112D5 /* AppDelegate.swift */,
-				B5807A661F0566EC002112D5 /* ViewController.swift */,
+				B53A735C1F0E8C4D00D458B4 /* VC */,
 				B5807A761F056707002112D5 /* UI */,
 				B542E9C51F05999E00627A79 /* Extensions */,
 				B5807A741F0566F1002112D5 /* Resources */,
@@ -231,6 +290,15 @@
 			name = Help;
 			sourceTree = "<group>";
 		};
+		C6E33D18A78D4F9F091A3C20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE9414ED6A96AAA0EAC289D0 /* Pods_BannerView.framework */,
+				90972948360F7EB13B00A4AF /* Pods_BannerViewExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -249,10 +317,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B50C5E3D1F05665D00908490 /* Build configuration list for PBXNativeTarget "BannerView" */;
 			buildPhases = (
+				46FE89FF6CC09AD98350C78F /* [CP] Check Pods Manifest.lock */,
 				B50C5E301F05665D00908490 /* Sources */,
 				B50C5E311F05665D00908490 /* Frameworks */,
 				B50C5E321F05665D00908490 /* Headers */,
 				B50C5E331F05665D00908490 /* Resources */,
+				E07355C86E266796D2F9CED3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,10 +337,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5807A731F0566EC002112D5 /* Build configuration list for PBXNativeTarget "BannerViewExample" */;
 			buildPhases = (
+				CB2C02B1249969FB331B6860 /* [CP] Check Pods Manifest.lock */,
 				B5807A5E1F0566EC002112D5 /* Sources */,
 				B5807A5F1F0566EC002112D5 /* Frameworks */,
 				B5807A601F0566EC002112D5 /* Resources */,
 				B5807A881F05715F002112D5 /* Embed Frameworks */,
+				F6C39A83B3CB1A2F1238E29D /* [CP] Embed Pods Frameworks */,
+				CD1361451E9294603E3FD759 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +414,7 @@
 				B542E9C11F05995B00627A79 /* banner_3.png in Resources */,
 				B542E9DA1F05C68C00627A79 /* Demo_reverse.gif in Resources */,
 				B542E9D61F05C3A700627A79 /* Demo_ar.gif in Resources */,
+				B5F789091F0E94F600626304 /* Cell.xib in Resources */,
 				B542E9B91F05994800627A79 /* banner_1.jpg in Resources */,
 				B542E9D81F05C68400627A79 /* Demo_alwaysForward.gif in Resources */,
 				B542E9CA1F059A1200627A79 /* Localizable.strings in Resources */,
@@ -354,6 +428,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46FE89FF6CC09AD98350C78F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2C02B1249969FB331B6860 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD1361451E9294603E3FD759 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BannerViewExample/Pods-BannerViewExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E07355C86E266796D2F9CED3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BannerView/Pods-BannerView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6C39A83B3CB1A2F1238E29D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BannerViewExample/Pods-BannerViewExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B50C5E301F05665D00908490 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -361,6 +513,7 @@
 			files = (
 				B5807A7A1F056861002112D5 /* BannerDataSource.swift in Sources */,
 				B5807A7C1F0569D8002112D5 /* BannerItem.swift in Sources */,
+				B53A73591F0E56F500D458B4 /* BannerCollectionView.swift in Sources */,
 				B5807A8A1F0575D9002112D5 /* UIView+Constraints.swift in Sources */,
 				B5807A781F05678A002112D5 /* BannerView.swift in Sources */,
 				B5807A811F056E25002112D5 /* UIApplication+RtL.swift in Sources */,
@@ -376,7 +529,9 @@
 			files = (
 				B5807A671F0566EC002112D5 /* ViewController.swift in Sources */,
 				B542E9D11F05BEE200627A79 /* Colors.swift in Sources */,
+				B53A735B1F0E88E800D458B4 /* CustomBannerViewController.swift in Sources */,
 				B542E9C71F0599AD00627A79 /* Localizable.swift in Sources */,
+				B53A735F1F0E8C6D00D458B4 /* Cell.swift in Sources */,
 				B5807A651F0566EC002112D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +708,7 @@
 		};
 		B50C5E3E1F05665D00908490 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7CDD77A5B49ECC3396A1752 /* Pods-BannerView.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -575,6 +731,7 @@
 		};
 		B50C5E3F1F05665D00908490 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB2AE12E0A600FA3699870AE /* Pods-BannerView.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -596,6 +753,7 @@
 		};
 		B5807A711F0566EC002112D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65BA36269FEB255F68ED517F /* Pods-BannerViewExample.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -611,6 +769,7 @@
 		};
 		B5807A721F0566EC002112D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7558056BDE9B62A3F89D9564 /* Pods-BannerViewExample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

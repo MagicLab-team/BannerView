@@ -3,6 +3,7 @@
 //  Localizable
 //
 //  Created by Roman Sorochak <roman.sorochak@gmail.com> on 6/23/17.
+//  For more details look here https://github.com/romansorochak/Localizable
 //  Copyright © 2017 MagicLab. All rights reserved.
 //
 

@@ -8,10 +8,12 @@
 
 import UIKit
 
-
+/**
+ Model for item that is shown in BannerCollectionCell.
+ */
 public class BannerItem: NSObject {
     
-    var image: UIImage?
+    private (set) public var image: UIImage?
     
     
     public init(image: UIImage?) {

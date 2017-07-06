@@ -1,0 +1,12 @@
+PODS:
+  - RSReusable (1.0.11)
+
+DEPENDENCIES:
+  - RSReusable
+
+SPEC CHECKSUMS:
+  RSReusable: ac2b6c35d1e9ce36ee1ffb03f0a3d6bb0a81ae8b
+
+PODFILE CHECKSUM: 497457da0a7d06b23a3942cccffd0a2db3064e9c
+
+COCOAPODS: 1.2.0

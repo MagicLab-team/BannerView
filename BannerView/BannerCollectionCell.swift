@@ -9,15 +9,19 @@
 import UIKit
 
 
-class BannerCollectionCell: UICollectionViewCell {
+/**
+ BannerCollectionCell.
+ */
+public class BannerCollectionCell: UICollectionViewCell {
     
     private var _imageView: UIImageView?
-    private var imageView: UIImageView {
+    public var imageView: UIImageView {
         get {
             if let imageView = _imageView {
                 return imageView
             }
             let imageView = UIImageView(frame: bounds)
+            imageView.contentMode = .scaleAspectFill
             contentView.addSubview(imageView)
             imageView.addConstraintsAlignedToSuperview()
             
@@ -27,7 +31,7 @@ class BannerCollectionCell: UICollectionViewCell {
         }
     }
     
-    var bannerItem: BannerItem? {
+    public var bannerItem: BannerItem? {
         didSet {
             imageView.image = bannerItem?.image
         }
