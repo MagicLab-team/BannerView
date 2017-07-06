@@ -11,9 +11,42 @@ import UIKit
 
 class BannerCollectionView: UICollectionView {
     
+    var isTouching: Bool = false {
+        didSet {
+            
+        }
+    }
+    
+    
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        print("touchesBegan")
+        isTouching = true
+        
+        print("touchesBegan: \(isTouching)")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        
+        isTouching = true
+        
+        print("touchesMoved: \(isTouching)")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        isTouching = false
+        
+        print("touchesEnded: \(isTouching)")
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        
+        isTouching = false
+        
+        print("touchesCancelled: \(isTouching)")
     }
 }

@@ -51,6 +51,9 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
             )
         }
     }
+    private var bannerCollectionView: BannerCollectionView? {
+        return collectionView as? BannerCollectionView
+    }
     
     private var bannerViewScrollType: BannerViewScrollType = .fromStart
     private var timeForOneItem: TimeInterval = 3
@@ -86,32 +89,46 @@ class BannerDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
     
     func startSlider() {
         timerIsWorking = true
-        timerScrollCollection()
+        timerScrollCollection(after: timeForOneItem)
     }
     
     func stopSlider() {
         timerIsWorking = false
     }
     
-    private func timerScrollCollection() {
+    var isUserInteracts: Bool {
+        if let bannerCollectionView = self.bannerCollectionView {
+            return bannerCollectionView.isTouching
+        }
+        return false
+    }
+    
+    var canAutomaticallyScroll: Bool {
+        return timerIsWorking && !isUserInteracts
+    }
+    
+    private func timerScrollCollection(after: TimeInterval) {
         if !timerIsWorking {
             return
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + timeForOneItem) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + after) { [weak self] in
             guard let strongSelf = self,
                 let total = strongSelf.bannerItems?.count else {
                     return
             }
-            let indexPath = strongSelf.indexPathToScroll(totalPages: total)
-            if indexPath.item >= 0 && indexPath.item < total {
-                strongSelf.collectionView?.scrollToItem(
-                    at: indexPath,
-                    at: .centeredHorizontally,
-                    animated: true
-                )
+            if strongSelf.canAutomaticallyScroll {
+                let indexPath = strongSelf.indexPathToScroll(totalPages: total)
+                if indexPath.item >= 0 && indexPath.item < total {
+                    strongSelf.collectionView?.scrollToItem(
+                        at: indexPath,
+                        at: .centeredHorizontally,
+                        animated: true
+                    )
+                }
+                strongSelf.timerScrollCollection(after: strongSelf.timeForOneItem)
+            } else {
+                strongSelf.timerScrollCollection(after: strongSelf.timeForOneItem * 2)
             }
-            
-            strongSelf.timerScrollCollection()
         }
     }
     

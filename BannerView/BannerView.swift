@@ -126,6 +126,7 @@ public class BannerView: UIView {
         type: BannerViewScrollType,
         timeForOneItem: TimeInterval,
         bannerItems: [BannerItem],
+        automaticallyScrolls: Bool = true,
         delegate: BannerViewDelegate) {
         self.delegate = delegate
         
@@ -149,12 +150,21 @@ public class BannerView: UIView {
                     with: index
                 )
         })
-        collectionView.backgroundColor = UIColor.green
         collectionView.dataSource = dataSource
         collectionView.delegate = dataSource
         
         pageControl.setup(total: bannerItems.count, currentPage: 0)
         
+        if automaticallyScrolls {
+            startAutomaticScrolling()
+        }
+    }
+    
+    public func startAutomaticScrolling() {
         dataSource.startSlider()
+    }
+    
+    public func stopAutomaticScrolling() {
+        dataSource.stopSlider()
     }
 }

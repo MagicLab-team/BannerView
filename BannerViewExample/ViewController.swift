@@ -29,7 +29,7 @@ class ViewController: UIViewController, BannerViewDelegate {
         
         topBannerView.setup(
             type: BannerViewScrollType.fromStart,
-            timeForOneItem: 1,
+            timeForOneItem: 2,
             bannerItems: items,
             delegate: self
         )
@@ -61,11 +61,11 @@ class ViewController: UIViewController, BannerViewDelegate {
     }
     
     func bannerView(bannerView: BannerView, didScrollTo: BannerItem, with index: Int) {
-        print("didScrollTo: \(index)")
+//        print("didScrollTo: \(index)")
     }
     
     func bannerView(bannerView: BannerView, didSelectItem: BannerItem, with index: Int) {
-        print("didSelectItem: \(index)")
+//        print("didSelectItem: \(index)")
     }
 }
 
