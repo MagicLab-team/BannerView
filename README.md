@@ -71,19 +71,43 @@ bannerView.setup(
 BannerViewDelegate allows you to be notifed when banner scrolls to next item or when user clicks on item.
 ```swift
 @objc public protocol BannerViewDelegate {
-    
+    /**
+     Notifies when banner view scrolls to the next item.
+     */
     @objc optional func bannerView(bannerView: BannerView, didScrollTo: BannerItem, with index: Int)
     
+    /**
+     Notifies when user selects item.
+     */
     @objc optional func bannerView(bannerView: BannerView, didSelectItem: BannerItem, with index: Int)
+    
+    /**
+     Allows to use custom cell.
+     */
+    @objc optional func bannerView(bannerView: BannerView, 
+                                   collectionView: UICollectionView,
+                                   cellForItemAt indexPath: IndexPath) -> UICollectionViewCell?
 }
 ```
 
 ## There are three possible scroll types
 
 ```swift
+/**
+ BannerViewScrollType contains different scroll types.
+ */
 public enum BannerViewScrollType {
+    /**
+     BannerView scrolls to the start after the last item.
+     */
     case fromStart
+    /**
+     BannerView scrolls to the end item and then to the first item through all items.
+     */
     case reverse
+    /**
+     BannerView always scrolls forward.
+     */
     case alwaysForward
 }
 ```
