@@ -70,6 +70,9 @@ bannerView.setup(
 
 BannerViewDelegate allows you to be notifed when banner scrolls to next item or when user clicks on item.
 ```swift
+/**
+ BannerViewDelegate.
+ */
 @objc public protocol BannerViewDelegate {
     /**
      Notifies when banner view scrolls to the next item.
