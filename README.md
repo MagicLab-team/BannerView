@@ -133,4 +133,4 @@ bannerView.pageControl.currentPageColor = UIColor.green
 
 ## License
 
-Reusable is released under the MIT license. See [LICENSE](https://github.com/MagicLab-team/BannerView/blob/master/LICENSE) for details.
+BannerView is released under the MIT license. See [LICENSE](https://github.com/MagicLab-team/BannerView/blob/master/LICENSE) for details.
